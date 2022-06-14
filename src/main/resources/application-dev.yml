@@ -37,13 +37,12 @@ api:
     contact-name: Doston
     contact-email: dostonbokhodirov@gmail.com
     contact-url: https://t.me/dostonbokhodirov
-    license-name: WebDevelopment-A1 given by Global Certificate Agency
     terms-of-count: 10
 cloud:
   aws:
     credentials:
-      access-key: AKIA4AI4BUQCHBMUZGGS
-      secret-key: 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
+      access-key: AKIAVITWSCQK3Z55XWVG
+      secret-key: XN4Q9iPhPx8Io35WQqIEkTIZiUODSdWcwjzxbb/Uh
     region:
       static: us-west-2
-bucketName: murodjon
+bucketName: dostonbucket
