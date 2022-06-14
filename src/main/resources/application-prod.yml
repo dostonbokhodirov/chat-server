@@ -41,8 +41,8 @@ api:
 cloud:
   aws:
     credentials:
-      access-key: AKIA4AI4BUQCHBMUZGGS
-      secret-key: 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
+      access-key: AKIAVITWSCQKVFLLUE33
+      secret-key: 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
     region:
       static: us-west-2
 bucketName: murodjon

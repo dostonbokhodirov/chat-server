@@ -41,8 +41,8 @@ api:
 cloud:
   aws:
     credentials:
-      access-key: AKIAVITWSCQK3Z55XWVG
-      secret-key: XN4Q9iPhPx8Io35WQqIEkTIZiUODSdWcwjzxbb/Uh
+      access-key: AKIAVITWSCQKVFLLUE33
+      secret-key: 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
     region:
       static: us-west-2
 bucketName: dostonbucket
