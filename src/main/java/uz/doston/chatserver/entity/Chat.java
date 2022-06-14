@@ -1,5 +1,6 @@
 package uz.doston.chatserver.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@JsonIgnoreProperties(value = {"users"})
 public class Chat extends Auditable {
 
     @Column(unique = true, nullable = false)

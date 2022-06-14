@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import uz.doston.chatserver.dto.message.MessageCreateDTO;
 import uz.doston.chatserver.dto.message.MessageCreateShortDTO;
 import uz.doston.chatserver.dto.message.MessageDTO;
+import uz.doston.chatserver.entity.Chat;
 import uz.doston.chatserver.entity.Message;
 import uz.doston.chatserver.enums.MessageType;
 import uz.doston.chatserver.exceptions.BadRequestException;
