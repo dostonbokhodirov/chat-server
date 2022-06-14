@@ -4,12 +4,9 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-import uz.doston.chatserver.dto.chat.ChatDTO;
 import uz.doston.chatserver.dto.message.MessageCreateDTO;
 import uz.doston.chatserver.dto.message.MessageCreateShortDTO;
 import uz.doston.chatserver.dto.message.MessageDTO;
-import uz.doston.chatserver.dto.user.UserDTO;
-import uz.doston.chatserver.entity.Chat;
 import uz.doston.chatserver.entity.Message;
 import uz.doston.chatserver.enums.MessageType;
 import uz.doston.chatserver.exceptions.BadRequestException;
@@ -45,12 +42,10 @@ public class MessageService extends AbstractService<MessageMapper, MessageReposi
 
     @CacheEvict(cacheNames = "messages", allEntries = true)
     public ResponseEntity<DataDTO<Long>> create(MessageCreateShortDTO dto) {
-        ChatDTO chatDTO = chatService.getById(dto.getChat());
-        UserDTO userDTO = userService.getById(dto.getAuthor());
         MessageCreateDTO createDTO = MessageCreateDTO
                 .builder()
-                .chat(chatDTO)
-                .author(userDTO)
+                .chat(chatService.getById(dto.getChat()))
+                .author(userService.getById(dto.getAuthor()))
                 .content(dto.getContent())
                 .build();
         switch (dto.getType()) {
@@ -71,8 +66,7 @@ public class MessageService extends AbstractService<MessageMapper, MessageReposi
 
     @Cacheable(cacheNames = "messages")
     public ResponseEntity<DataDTO<List<MessageDTO>>> getAll(Long chatId) {
-        Chat chat = chatService.getEntityById(chatId);
-        List<Message> messageList = repository.findAllByChat(chat);
+        List<Message> messageList = repository.findAllByChat(chatService.getEntityById(chatId));
         List<MessageDTO> messageDTOList = mapper.toDTO(messageList);
         return new ResponseEntity<>(new DataDTO<>(messageDTOList, (long) messageDTOList.size()));
     }

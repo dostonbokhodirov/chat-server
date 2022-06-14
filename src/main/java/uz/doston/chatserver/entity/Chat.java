@@ -19,7 +19,7 @@ public class Chat extends Auditable {
     @Column(unique = true, nullable = false)
     private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "chat_users",
             joinColumns = {@JoinColumn(name = "chat_id")},
