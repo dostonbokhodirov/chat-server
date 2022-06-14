@@ -24,3 +24,11 @@ spring:
       WRITE_DATES_AS_TIMESTAMPS: false
 server:
   port: 8080
+cloud:
+  aws:
+    credentials:
+      access-key: AKIA4AI4BUQCHBMUZGGS
+      secret-key: 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
+    region:
+      static: us-west-2
+bucketName: murodjon

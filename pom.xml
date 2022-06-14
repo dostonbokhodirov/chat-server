@@ -101,6 +101,11 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jdk8</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.awspring.cloud</groupId>
+            <artifactId>spring-cloud-aws-autoconfigure</artifactId>
+            <version>2.4.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -108,7 +113,7 @@
 <!--            <plugin>-->
 <!--                <groupId>org.jacoco</groupId>-->
 <!--                <artifactId>jacoco-maven-plugin</artifactId>-->
-<!--                <version>0.7.7.201606060606</version>-->
+<!--                <version>0.8.4</version>-->
 <!--                <executions>-->
 <!--                    <execution>-->
 <!--                        <goals>-->
