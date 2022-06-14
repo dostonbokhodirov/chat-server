@@ -24,6 +24,21 @@ spring:
       WRITE_DATES_AS_TIMESTAMPS: false
 server:
   port: 8080
+springdoc:
+  swagger-ui:
+    path: swagger-ui
+  api-docs:
+    path: /api-docs
+api:
+  info:
+    title: Chat-Server
+    version: 1.0.0 RELEASE
+    description: Simple Task about Chat Server
+    contact-name: Doston
+    contact-email: dostonbokhodirov@gmail.com
+    contact-url: https://t.me/dostonbokhodirov
+    license-name: WebDevelopment-A1 given by Global Certificate Agency
+    terms-of-count: 10
 cloud:
   aws:
     credentials:
